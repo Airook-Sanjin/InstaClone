@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+  body {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    
+  }
+  .Nav-button{
+    background-color: transparent;
+    border:none;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.75rem;
+    gap: 1rem;
+    height:2.4rem;
+    /* width:5rem; */
+  }
+.RegisterBody{
+
+}
+.RegisterForm{
+    background-color: antiquewhite;
+}

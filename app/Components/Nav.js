@@ -1,4 +1,4 @@
-// import Home from "./app/assets/icons/home.svg";
+const Home = "/assets/icons/home.svg";
 const Search = "/assets/icons/search.svg";
 const Explore = "/assets/icons/explore.svg";
 const Reels = "/assets/icons/reels.svg";
@@ -19,7 +19,7 @@ export default function Nav(){
        
         <section className="NAV">
           <button className="Nav-button ">
-            <img className="Nav-Icon Home" src ={Search} alt="HomeIcon" />
+            <img className="Nav-Icon Home" src ={Home} alt="HomeIcon" />
             <a>Home</a>
           </button>
           <button className="Nav-button ">

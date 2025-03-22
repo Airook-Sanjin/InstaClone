@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+  body {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    
+  }
+  :root{
+  --color-primary: hsl(56, 50%, 90%);
+  --color-sec-pri: hsl(86, 50%, 80%);
+  --color-secondary: hsl(56, 50%, 10%);
+  --color-tertiary: hsl(116, 80%, 20%);
+  --color-accent: hsl(356, 80%, 20%);
+  }
+  .Page-Container{
+    display:flex ;
+    justify-content: center;
+  }
+  .RightBody{
+    display:flex ;
+    justify-content: center;
+    padding-top:5rem;
+    flex-direction: column;
+
+  }
+  .LeftBody{
+    display:flex ;
+    justify-content: center;
+    padding-top:5rem;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width:30%;
+    height: 460px;
+  }
+  .MockupMobile{
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  top:0;
+  left:0;
+  /* width:100%; */
+  height:auto;
+  }
+  .MockupMobile.active{
+    opacity: 1;
+  }
+  
+  
+  .Login {
+    background-color: var(--color-sec-pri);
+    color: hsl(0, 0%, 100%);
+    /* border:none; */
+    border-radius: .4rem;
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* align-items: center; */
+    /* padding: 0.75rem; */
+    /* gap: 1rem; */
+    /* height:2.4rem; */
+    /* width:5rem; */
+  }
+  .LoginSection{
+    border: 1px solid hsl(0, 0%, 44%);
+    width:20rem;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    padding:rem;
+  }
+  .LoginForm{
+    display:flex;
+    flex-direction: column;
+    gap: .5rem;
+   
+
+  }
+  .LoginForm input{
+  background-color: transparent;
+  border: 2px solid  hsl(0, 0%, 44%);
+  }
+  .SignupSection{
+    border: 2px solid  hsl(0, 0%, 44%);
+  }
