@@ -1,6 +1,14 @@
 'use client'
+import { hash, genSalt } from "bcryptjs";
 import React, { Component } from "react";
 import "./RegisterStyle.css"
+import dbConnect from "../lib/mongodb";
+const mongoose = require("mongoose")
+const User = require("../models/User")
+
+
+
+const salt = await genSalt(10)
 
 class Registerpage extends Component {
     constructor(props) {
@@ -13,8 +21,27 @@ class Registerpage extends Component {
         this.onSignUp = this.onSignUp.bind(this);
     }
       
-    onSignUp() {
+    async onSignUp() {
+        
         let { email, password, name } = this.state;
+        try{
+            const response = await fetch ("/api/register", {
+                method:"POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({name,email,password}),
+            });
+
+            const result = await response.json();
+            if (response.ok){
+                console.log("user registered successfully", result.message); 
+            }else{
+                console.log("Error registering user",result.message);
+            }
+        } catch(error){
+            console.log("Error: ",error);
+        }
     }
 
     render() {
@@ -32,7 +59,7 @@ class Registerpage extends Component {
                     <input
                         placeholder="password"
                         secureTextEntry={true}
-                        onChange={(e) => this.setState({ password: e.target.value })}
+                        onChange={(e) => this.setState({ password: hash(e.target.value, salt,) })}
                     />
                     <button onPress={() => this.onSignUp()} title="Sign Up" />
                 </form>
